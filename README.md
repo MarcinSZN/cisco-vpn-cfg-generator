@@ -98,3 +98,8 @@ crypto map MAP_DEVICE 120 ipsec-isakmp
   match address # PUT ACL NAME FOR VPN HERE #
 
 Config saved in /Path/to/vpn_generated_cfg.txt.
+```
+
+## Disclaimer
+Script **might not** work for every possible S2S Tunnel configuration, might crash by oversight, it collects only portion of data from the configuration, and eventually might be extended with more featues by anyone.
+Script should be tested in staging/lab environment first before using it on production systems.
