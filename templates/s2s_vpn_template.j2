@@ -1,0 +1,21 @@
+crypto ikev2 keyring KR_{{ peer_name }}
+  peer {{ peer_name }}
+    address {{ remote_peer_ip }}
+    pre-shared-key # PUT HERE PRE_SHARED KEY #
+!
+crypto ikev2 profile PROFILE_NAME_{{ peer_name }}
+  match identity remote address {{ remote_peer_ip }} {{ remote_peer_mask }}
+  identity local address {{ local_ip_addr}}
+  authentication remote pre-share
+  authentication local pre-share
+  keyring local KR_{{ peer_name }}
+  lifetime {{ ikev2_lifetime }}
+
+crypto map MAP_DEVICE {{ crypto_map_number  }} ipsec-isakmp
+  description --- {{ peer_name }} ---
+  set peer {{ remote_peer_ip }}
+  set security-association lifetime seconds {{ ipsec_lifetime }}
+  set transform-set {{ ipsec_transformset_name }}
+  set pfs {{ pfs_group_var }}
+  set ikev2-profile PROFILE_NAME_{{ peer_name }}
+  match address # PUT ACL NAME FOR VPN HERE #

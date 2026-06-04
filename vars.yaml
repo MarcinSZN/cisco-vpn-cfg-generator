@@ -1,0 +1,11 @@
+---
+ikev2_lifetime: 14400
+ipsec_lifetime: 1880
+crypto_map_number: 120
+local_ip_addr: 10.10.10.10
+remote_peer_ip: 172.16.1.1
+remote_peer_mask: 255.255.255.252
+peer_name: DEMO
+ipsec_transformset_name: "DEMO_TRANSFORM_SET_NAME"
+pfs_group_var: group15
+...
