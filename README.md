@@ -101,5 +101,5 @@ Config saved in /Path/to/vpn_generated_cfg.txt.
 ```
 
 ## Disclaimer
-Script **might not** work for every possible S2S Tunnel configuration, might crash by oversight, it collects only portion of data from the configuration, and eventually might be extended with more featues by anyone.
+Script **might not** work for every possible S2S Tunnel configuration, might crash by oversight, script also generates only part of the configuration, and eventually might be extended with more features by me or any volunteer.
 Script should be tested in staging/lab environment first before using it on production systems.
